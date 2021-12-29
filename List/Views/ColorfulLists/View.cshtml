@@ -1,0 +1,19 @@
+﻿@using ColorfulListWebApp.Data.ViewModels
+@model ColorfulListVM
+
+<h3>@Model.Name</h3>
+<div class="row my-4">
+    <div class="col-md-8">
+        @foreach (var listItem in Model.ListItems)
+        {
+            <div class="rounded p-2 mb-2" width="100%" style="@listItem.StyleStr">
+                <input type="checkbox" value="@listItem.Id" class="listItemCheckbox" id="flexCheck-@listItem.Id" @listItem.CheckedStr>
+                <label for="flexCheck-@listItem.Id">
+                    @listItem.Text
+                </label>
+            </div>
+        }
+        
+    </div>
+</div>
+
